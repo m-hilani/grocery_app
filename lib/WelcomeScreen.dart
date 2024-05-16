@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:grocery_app/HomePage.dart';
 import 'package:grocery_app/constants.dart';
 
@@ -14,7 +12,7 @@ class Welcomescreen extends StatelessWidget {
         body: Stack(
           children: [
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('$kimage/welcome1.jpeg'),
                   fit: BoxFit.fitHeight,
@@ -31,7 +29,7 @@ class Welcomescreen extends StatelessWidget {
                   height: 53,
                   fit: BoxFit.fill,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 const Text(
@@ -66,11 +64,11 @@ class Welcomescreen extends StatelessWidget {
                   style: Theme.of(context).elevatedButtonTheme.style,
                   onPressed: () => Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => HomePage()),
+                    MaterialPageRoute(builder: (context) => const HomePage()),
                   ),
                   child: const Text('Get Started'),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 90,
                 )
               ],

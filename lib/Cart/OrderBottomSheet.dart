@@ -14,8 +14,8 @@ class _OrderBottomSheetState extends State<OrderBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-      decoration: BoxDecoration(
+      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+      decoration: const BoxDecoration(
           color: Color(0xFFF2F3F2),
           borderRadius: BorderRadius.vertical(top: Radius.circular(30))),
       child: Column(
@@ -25,8 +25,8 @@ class _OrderBottomSheetState extends State<OrderBottomSheet> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
                 child: Text(
                   "Checkout",
                   style: TextStyle(color: CupertinoColors.black, fontSize: 24),
@@ -36,13 +36,13 @@ class _OrderBottomSheetState extends State<OrderBottomSheet> {
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  icon: Icon(
+                  icon: const Icon(
                     color: Colors.black,
                     Icons.clear,
                   ))
             ],
           ),
-          Divider(),
+          const Divider(),
           Expanded(
             child: Image.asset(
               '$kimage/Placeorder.png',
@@ -52,10 +52,10 @@ class _OrderBottomSheetState extends State<OrderBottomSheet> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Acceptedscreen()),
+                  MaterialPageRoute(builder: (context) => const Acceptedscreen()),
                 );
               },
-              child: Text('Place Order')),
+              child: const Text('Place Order')),
         ],
       ),
     );

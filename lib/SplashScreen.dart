@@ -12,16 +12,16 @@ class Splashscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Timer(
-        Duration(seconds: 3),
+        const Duration(seconds: 3),
         () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => Welcomescreen())));
+            context, MaterialPageRoute(builder: (context) => const Welcomescreen())));
 
     return SafeArea(
       child: Scaffold(
         backgroundColor: // Color(0xFF22A451),
             kprimaryColor,
         body: Padding(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: Center(
             child: Image.asset(
               '$kimage/img.png',

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/Explorer/BeveragesScreen.dart';
 import 'package:grocery_app/constants.dart';
@@ -7,14 +6,14 @@ import 'Category.dart';
 import '../Title.dart';
 
 class ExploreScreen extends StatelessWidget {
-  ExploreScreen({super.key});
+  const ExploreScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 40.0),
+        const Padding(
+          padding: EdgeInsets.only(top: 40.0),
           child: MTitle(title: 'Find Products'),
         ),
         Expanded(
@@ -47,7 +46,7 @@ class CategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => Navigator.push(
-          context, MaterialPageRoute(builder: (context) => BeveragesScreen())),
+          context, MaterialPageRoute(builder: (context) => const BeveragesScreen())),
       child: Container(
         decoration: BoxDecoration(
             border: Border.all(color: category.color),

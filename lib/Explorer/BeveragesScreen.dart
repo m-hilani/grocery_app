@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/Title.dart';
 import 'package:grocery_app/constants.dart';
@@ -27,24 +26,24 @@ class _BeveragesScreenState extends State<BeveragesScreen> {
               children: [
                 IconButton(
                   onPressed: () => Navigator.pop(context),
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.arrow_back_ios_new_outlined,
                     color: Colors.black,
                   ),
                 ),
-                MTitle(title: 'Beverages'),
+                const MTitle(title: 'Beverages'),
                 MIcon(
                   onPressed: () {
                     showModalBottomSheet(
                       context: context,
                       // isScrollControlled: true,
-                      builder: (context) => AddBeverageBottomSheet(),
+                      builder: (context) => const AddBeverageBottomSheet(),
                     );
                   },
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             Expanded(
@@ -73,10 +72,10 @@ class BeverageCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(15),
+      padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
           border: Border.all(
-            color: Color(0xFFE2E2E2),
+            color: const Color(0xFFE2E2E2),
           ),
           borderRadius: BorderRadius.circular(18)),
       child: Stack(
@@ -103,7 +102,7 @@ class BeverageCard extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 0),
                   child: Text(
                     beverage.name,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                     ),
                   )),
@@ -111,13 +110,13 @@ class BeverageCard extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 5),
                   child: Text(
                     beverage.capacity,
-                    style: TextStyle(fontSize: 14, color: Color(0xFF7C7C7C)),
+                    style: const TextStyle(fontSize: 14, color: Color(0xFF7C7C7C)),
                   )),
               Padding(
                   padding: const EdgeInsets.symmetric(vertical: 0),
                   child: Text(
                     '\$${beverage.price.toStringAsFixed(2)}',
-                    style: TextStyle(fontSize: 18, color: Colors.black),
+                    style: const TextStyle(fontSize: 18, color: Colors.black),
                   )),
             ],
           ),
@@ -136,7 +135,7 @@ class MIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          border: cart ? Border.all(color: Color(0xA7E0E0E1)) : null,
+          border: cart ? Border.all(color: const Color(0xA7E0E0E1)) : null,
           color: cart ? Colors.white : kprimaryColor,
           borderRadius: BorderRadius.circular(17)),
       child: IconButton(

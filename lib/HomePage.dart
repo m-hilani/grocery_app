@@ -4,6 +4,8 @@ import 'package:grocery_app/Cart/CartScreen.dart';
 import 'package:grocery_app/Explorer/ExploreScreen.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -12,11 +14,11 @@ class _HomePageState extends State<HomePage> {
   int _selectedIndex = 1;
 
   static final List<Widget> _widgetOptions = <Widget>[
-    Text('Shop Page'),
-    ExploreScreen(),
-    CartScreen(),
-    Text('Favorite Page'),
-    Text('Profile Page'),
+    const Text('Shop Page'),
+    const ExploreScreen(),
+    const CartScreen(),
+    const Text('Favorite Page'),
+    const Text('Profile Page'),
   ];
 
   void _onItemTapped(int index) {
@@ -74,9 +76,9 @@ class _HomePageState extends State<HomePage> {
               ],
               currentIndex: _selectedIndex,
               showUnselectedLabels: true,
-              unselectedItemColor: Color(0xFF181725),
+              unselectedItemColor: const Color(0xFF181725),
               iconSize: 24,
-              selectedItemColor: Color(0xFF53B175),
+              selectedItemColor: const Color(0xFF53B175),
               backgroundColor: Colors.white,
               onTap: _onItemTapped,
             ),

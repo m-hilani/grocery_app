@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/constants.dart';
 
@@ -12,35 +11,37 @@ class Acceptedscreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Expanded(child: SizedBox()),
+          const Expanded(child: SizedBox()),
           Image.asset('$kimage/accept.png'),
-          Expanded(child: SizedBox()),
-          Text(
+          const Expanded(child: SizedBox()),
+          const Text(
             textAlign: TextAlign.center,
             'Your Order has been accepted',
             style: TextStyle(fontSize: 28),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
-          Text(
+          const Text(
             'Your items has been placcd and is on \nit’s way to being processed',
             style: TextStyle(fontSize: 16, color: Color(0xFF7C7C7C)),
           ),
-          Expanded(child: SizedBox()),
+          const Expanded(child: SizedBox()),
           ElevatedButton(
               onPressed: () => {Navigator.pop(context)},
-              child: Text('Track Order')),
-          SizedBox(
+              child: const Text('Track Order')),
+          const SizedBox(
             height: 10,
           ),
           TextButton(
-              onPressed: () {},
-              child: Text(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text(
                 'Back to home',
                 style: TextStyle(fontSize: 18),
               )),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
         ],

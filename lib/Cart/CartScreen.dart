@@ -1,9 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/Cart/CartCard.dart';
 import 'package:grocery_app/Cart/OrderBottomSheet.dart';
 import 'package:grocery_app/Title.dart';
-import 'package:grocery_app/constants.dart';
 
 import 'CartModel.dart';
 
@@ -16,12 +14,12 @@ class CartScreen extends StatelessWidget {
       body: Stack(children: [
         Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 40.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 40.0),
               child: MTitle(title: 'My Cart'),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 0.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 0.0),
               child: Divider(),
             ),
             Expanded(
@@ -32,7 +30,7 @@ class CartScreen extends StatelessWidget {
                 },
               ),
             ),
-            Divider()
+            const Divider()
           ],
         ),
         Positioned(
@@ -41,9 +39,9 @@ class CartScreen extends StatelessWidget {
           child: ElevatedButton(
               onPressed: () {
                 showModalBottomSheet(
-                    context: context, builder: (context) => OrderBottomSheet());
+                    context: context, builder: (context) => const OrderBottomSheet());
               },
-              child: Text('Go to Checkout')),
+              child: const Text('Go to Checkout')),
         )
       ]),
     );
