@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:grocery_app/Cart/CartScreen.dart';
 import 'package:grocery_app/Explorer/ExploreScreen.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   static final List<Widget> _widgetOptions = <Widget>[
     Text('Shop Page'),
     ExploreScreen(),
-    Text('Cart Page'),
+    CartScreen(),
     Text('Favorite Page'),
     Text('Profile Page'),
   ];
@@ -42,26 +43,32 @@ class _HomePageState extends State<HomePage> {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: BottomNavigationBar(
+              type: BottomNavigationBarType.fixed,
               items: const <BottomNavigationBarItem>[
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.shop),
+                  icon: Icon(
+                    Icons.store_mall_directory_outlined,
+                  ),
                   label: 'Shop',
                   backgroundColor: Colors.white,
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.explore),
+                  icon: Icon(Icons.search_rounded),
                   label: 'Explore',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.shopping_cart),
+                  icon: Icon(CupertinoIcons.shopping_cart),
                   label: 'Cart',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.favorite),
-                  label: 'Favorite',
-                ),
+                    icon: Icon(CupertinoIcons.suit_heart),
+                    label: 'Favorite',
+                    backgroundColor: Colors.white),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.account_circle),
+                  icon: Icon(
+                    CupertinoIcons.person,
+                    weight: 100,
+                  ),
                   label: 'Account',
                 ),
               ],
@@ -70,7 +77,7 @@ class _HomePageState extends State<HomePage> {
               unselectedItemColor: Color(0xFF181725),
               iconSize: 24,
               selectedItemColor: Color(0xFF53B175),
-              backgroundColor: Colors.transparent,
+              backgroundColor: Colors.white,
               onTap: _onItemTapped,
             ),
           ),

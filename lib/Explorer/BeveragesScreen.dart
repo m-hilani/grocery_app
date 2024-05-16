@@ -33,7 +33,7 @@ class _BeveragesScreenState extends State<BeveragesScreen> {
                   ),
                 ),
                 MTitle(title: 'Beverages'),
-                PlusIcon(
+                MIcon(
                   onPressed: () {
                     showModalBottomSheet(
                       context: context,
@@ -84,7 +84,7 @@ class BeverageCard extends StatelessWidget {
           Positioned(
             bottom: 5,
             right: 5,
-            child: PlusIcon(),
+            child: MIcon(),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,19 +127,23 @@ class BeverageCard extends StatelessWidget {
   }
 }
 
-class PlusIcon extends StatelessWidget {
-  PlusIcon({super.key, this.onPressed});
+class MIcon extends StatelessWidget {
+  MIcon({super.key, this.onPressed, this.cart = false, this.icon = Icons.add});
   void Function()? onPressed;
+  bool cart;
+  IconData icon;
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: kprimaryColor, borderRadius: BorderRadius.circular(17)),
+          border: cart ? Border.all(color: Color(0xA7E0E0E1)) : null,
+          color: cart ? Colors.white : kprimaryColor,
+          borderRadius: BorderRadius.circular(17)),
       child: IconButton(
           onPressed: onPressed,
           icon: Icon(
-            color: Colors.white,
-            Icons.add,
+            color: cart ? kprimaryColor : Colors.white,
+            icon,
             // color: Colors.green,
           )),
     );
