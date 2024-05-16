@@ -3,9 +3,17 @@ import 'package:grocery_app/Cart/CartModel.dart';
 import 'package:grocery_app/Explorer/BeveragesScreen.dart';
 import 'package:grocery_app/constants.dart';
 
-class Cartcard extends StatelessWidget {
+class Cartcard extends StatefulWidget {
   const Cartcard({super.key, required this.item});
   final CartModel item;
+
+  @override
+  State<Cartcard> createState() => _CartcardState();
+}
+
+int num = 1;
+
+class _CartcardState extends State<Cartcard> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,21 +26,23 @@ class Cartcard extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Image.asset('$kimage/${item.name}.png'),
+            Image.asset('$kimage/${widget.item.name}.png'),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Text(
-                  item.name,
-                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  widget.item.name,
+                  style: const TextStyle(
+                      fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
                   height: 5,
                 ),
                 Text(
-                  item.capacity,
-                  style: const TextStyle(fontSize: 14, color: Color(0xFF7C7C7C)),
+                  widget.item.capacity,
+                  style:
+                      const TextStyle(fontSize: 14, color: Color(0xFF7C7C7C)),
                 ),
                 const SizedBox(
                   height: 10,
@@ -42,20 +52,30 @@ class Cartcard extends StatelessWidget {
                     MIcon(
                       cart: true,
                       icon: Icons.remove,
+                      onPressed: () {
+                        setState(() {
+                          if (num > 0) num--;
+                        });
+                      },
                     ),
                     const SizedBox(
                       width: 10,
                     ),
-                    const Text(
-                      '1',
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                    Text(
+                      '$num',
+                      style: const TextStyle(
+                          fontSize: 16, fontWeight: FontWeight.w600),
                     ),
                     const SizedBox(
                       width: 10,
                     ),
                     MIcon(
                       cart: true,
+                      onPressed: () {
+                        setState(() {
+                          num++;
+                        });
+                      },
                     )
                   ],
                 )
@@ -69,8 +89,9 @@ class Cartcard extends StatelessWidget {
                   height: 50,
                 ),
                 Text(
-                  '\$${item.price.toStringAsFixed(2)}',
-                  style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
+                  '\$${widget.item.price.toStringAsFixed(2)}',
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w600, fontSize: 18),
                 ),
               ],
             )
